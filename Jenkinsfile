@@ -9,6 +9,9 @@ pipeline {
       }
     }
     stage('Deploy') {
+      options {
+        timeout(time: 15, unit: 'SECONDS')
+      }
       input {
         message 'Which Version?'
         id 'Deploy'
